@@ -1,0 +1,9 @@
+.module {
+  width: 640px;
+  padding: 48px;
+  margin: 0 auto;
+}
+
+.module h1 {
+  margin-bottom: 16px;
+}

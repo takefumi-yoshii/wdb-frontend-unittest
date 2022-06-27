@@ -1,0 +1,17 @@
+.module {
+  display: flex;
+  padding: 4px;
+}
+
+.module input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.module button {
+  width: 128px;
+  padding: 12px;
+  font-size: 16px;
+}

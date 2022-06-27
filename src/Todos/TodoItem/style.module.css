@@ -1,0 +1,30 @@
+.module {
+  padding: 4px;
+  border-bottom: 1px solid #ccc;
+}
+
+.createdAt {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #666;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 21px;
+}
+
+.content p {
+  width: 100%;
+  text-align: right;
+}
+
+.content button {
+  min-width: 36px;
+  min-height: 36px;
+  margin-left: 16px;
+}

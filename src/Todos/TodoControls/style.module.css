@@ -1,0 +1,19 @@
+.module {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 4px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #f6f6f6;
+}
+
+.module p {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.module button {
+  padding: 2px 12px;
+  font-size: 12px;
+}
