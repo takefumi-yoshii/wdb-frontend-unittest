@@ -1,4 +1,7 @@
-import React, { useCallback, useState } from "react";
+import React, {
+  useCallback,
+  useState,
+} from "react";
 
 export function useTodoForm({
   onSubmit,
@@ -7,7 +10,9 @@ export function useTodoForm({
 }) {
   const [value, setValue] = useState("");
   const handleChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (
+      event: React.ChangeEvent<HTMLInputElement>
+    ) => {
       setValue(event.currentTarget.value);
     },
     []
@@ -21,5 +26,9 @@ export function useTodoForm({
     },
     [value, onSubmit, setValue]
   );
-  return { value, handleSubmit, handleChange } as const;
+  return {
+    value,
+    handleSubmit,
+    handleChange,
+  } as const;
 }

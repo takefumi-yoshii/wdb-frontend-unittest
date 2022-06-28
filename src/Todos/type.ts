@@ -3,5 +3,4 @@ export type Todo = {
   createdAt: string;
   name: string;
   done: boolean;
-  priority: "high" | "middle" | "row";
 };

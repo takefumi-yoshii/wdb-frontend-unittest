@@ -18,17 +18,16 @@ export function Todos() {
     <div className={styles.module}>
       <h1>My Todos</h1>
       <TodoForm onSubmit={handleSubmit} />
+      <TodoControls
+        enabled={!!todos.length}
+        sortOrderBy={sortOrderBy}
+        onClickSort={handleClickSort}
+      />
       {todos.length ? (
-        <>
-          <TodoControls
-            sortOrderBy={sortOrderBy}
-            onClickSort={handleClickSort}
-          />
-          <TodoList
-            todos={sortTodo(todos, sortOrderBy)}
-            onClickClose={handleClickClose}
-          />
-        </>
+        <TodoList
+          todos={sortTodo(todos, sortOrderBy)}
+          onClickClose={handleClickClose}
+        />
       ) : (
         <NoItem />
       )}

@@ -6,11 +6,21 @@ type Props = {
   todos: Todo[];
   onClickClose: (id: string) => void;
 };
-export function TodoList({ todos, onClickClose }: Props) {
+export function TodoList({
+  todos,
+  onClickClose,
+}: Props) {
   return (
-    <ul aria-label="Todo一覧" className={styles.module}>
+    <ul
+      aria-label="Todo一覧"
+      className={styles.module}
+    >
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} onClickClose={onClickClose} />
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          onClickClose={onClickClose}
+        />
       ))}
     </ul>
   );

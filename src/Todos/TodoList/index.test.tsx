@@ -1,11 +1,23 @@
-import { render, screen } from "@testing-library/react";
+import {
+  render,
+  screen,
+} from "@testing-library/react";
 import { createTodo } from "../functions";
 import { TodoList } from "./";
 
 describe("TodoList", () => {
-  test("入力し「Add」ボタンを押下すると、入力値を引数に onSubmit が呼ばれること", () => {
+  test("props の todos 一覧を表示すること", () => {
     const mockFn = jest.fn();
-    render(<TodoList todos={[createTodo("テスト")]} onClickClose={mockFn} />);
-    expect(screen.getByText("テスト")).toBeInTheDocument();
+    render(
+      <TodoList
+        todos={[createTodo("テスト")]}
+        onClickClose={mockFn}
+      />
+    );
+    expect(
+      screen.getByRole("listitem", {
+        name: "テスト",
+      })
+    ).toBeInTheDocument();
   });
 });
