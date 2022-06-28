@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 import { createTodo } from "../functions";
 import { TodoItem } from "./";
 
-describe("TodoForm", () => {
+describe("TodoItem", () => {
   test("「x」ボタンを押下すると、id を引数に onClickClose が呼ばれること", () => {
     const mockFn = jest.fn();
     const { id, ...todo } = createTodo("テスト");

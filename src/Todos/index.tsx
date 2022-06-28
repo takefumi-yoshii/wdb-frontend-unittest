@@ -19,7 +19,7 @@ export function Todos() {
       <h1>My Todos</h1>
       <TodoForm onSubmit={handleSubmit} />
       <TodoControls
-        enabled={!!todos.length}
+        hasTodos={!!todos.length}
         sortOrderBy={sortOrderBy}
         onClickSort={handleClickSort}
       />

@@ -4,27 +4,25 @@ import {
 } from "@testing-library/react";
 import { TodoControls } from "./";
 
-describe("TodoControls", () => {
-  test("[sortOrderBy: true] 昇順表示中ステータスを表すこと", () => {
+describe("TodoControls: Todo未登録時", () => {
+  test("Todo 入力を促すメッセージが表示されていること", () => {
     render(
       <TodoControls
-        enabled={false}
+        hasTodos={false}
         sortOrderBy={true}
       />
     );
     expect(
-      screen.getByRole("button", {
-        name: "降順に変更 ▼",
-      })
+      screen.getByText("Todo を入力してください")
     ).toBeInTheDocument();
   });
 });
 
-describe("TodoControls", () => {
+describe("TodoControls: Todo登録時", () => {
   test("[sortOrderBy: true] 昇順表示中ステータスを表すこと", () => {
     render(
       <TodoControls
-        enabled={true}
+        hasTodos={true}
         sortOrderBy={true}
       />
     );
@@ -40,7 +38,7 @@ describe("TodoControls", () => {
   test("[sortOrderBy: false] 降順表示中ステータスを表すこと", () => {
     render(
       <TodoControls
-        enabled={true}
+        hasTodos={true}
         sortOrderBy={false}
       />
     );

@@ -5,8 +5,9 @@ export function createTodo(
   value: string,
   createdAt?: string
 ) {
-  if (value === "")
+  if (value === "") {
     throw Error("1文字以上の入力が必要");
+  }
   const date = createdAt
     ? new Date(createdAt)
     : new Date();
