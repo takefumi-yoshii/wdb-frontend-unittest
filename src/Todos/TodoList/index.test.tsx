@@ -11,7 +11,7 @@ describe("TodoList", () => {
     render(
       <TodoList
         todos={[createTodo("テスト")]}
-        onClickClose={mockFn}
+        onClickDelete={mockFn}
       />
     );
     expect(

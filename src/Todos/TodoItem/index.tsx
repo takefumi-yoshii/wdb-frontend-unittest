@@ -5,11 +5,11 @@ import styles from "./style.module.css";
 
 type Props = {
   todo: Todo;
-  onClickClose: (id: string) => void;
+  onClickDelete: (id: string) => void;
 };
-export function TodoComponent({
+export function TodoItem({
   todo,
-  onClickClose,
+  onClickDelete,
 }: Props) {
   const todoId = useId();
   return (
@@ -24,7 +24,7 @@ export function TodoComponent({
         <p id={todoId}>{todo.name}</p>
         <button
           onClick={() => {
-            onClickClose(todo.id);
+            onClickDelete(todo.id);
           }}
         >
           ×
@@ -34,4 +34,4 @@ export function TodoComponent({
   );
 }
 
-export const TodoItem = memo(TodoComponent);
+export default memo(TodoItem);

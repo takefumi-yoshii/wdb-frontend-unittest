@@ -15,6 +15,7 @@ export function TodoForm({ onSubmit }: Props) {
       <input
         type="text"
         value={value}
+        placeholder="Todo を入力"
         onChange={handleChange}
       />
       <button>Add</button>

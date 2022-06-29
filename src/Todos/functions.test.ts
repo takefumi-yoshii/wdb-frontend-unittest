@@ -7,7 +7,6 @@ describe("createTodo", () => {
   test("任意の文字列でTodoを作成できる", () => {
     expect(createTodo("テスト")).toMatchObject({
       name: "テスト",
-      done: false,
     });
   });
   test("空文字列の場合、例外をスローする", () => {

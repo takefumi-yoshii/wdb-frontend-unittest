@@ -1,14 +1,14 @@
-import { TodoItem } from "../TodoItem";
+import TodoItem from "../TodoItem";
 import type { Todo } from "../type";
 import styles from "./style.module.css";
 
 type Props = {
   todos: Todo[];
-  onClickClose: (id: string) => void;
+  onClickDelete: (id: string) => void;
 };
 export function TodoList({
   todos,
-  onClickClose,
+  onClickDelete,
 }: Props) {
   return (
     <ul
@@ -19,7 +19,7 @@ export function TodoList({
         <TodoItem
           key={todo.id}
           todo={todo}
-          onClickClose={onClickClose}
+          onClickDelete={onClickDelete}
         />
       ))}
     </ul>

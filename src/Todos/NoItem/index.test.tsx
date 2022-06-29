@@ -5,7 +5,7 @@ import {
 import { NoItem } from "./";
 
 describe("NoItem", () => {
-  test("文言表示", () => {
+  test("文言が表示されていること", () => {
     render(<NoItem />);
     expect(
       screen.getByText("Todo がありません")

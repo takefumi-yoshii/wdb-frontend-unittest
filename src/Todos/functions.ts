@@ -6,7 +6,7 @@ export function createTodo(
   createdAt?: string
 ) {
   if (value === "") {
-    throw Error("1文字以上の入力が必要");
+    throw new Error("1文字以上の入力が必要");
   }
   const date = createdAt
     ? new Date(createdAt)
@@ -15,7 +15,6 @@ export function createTodo(
     id: uuidv4(),
     name: value,
     createdAt: date.toISOString(),
-    done: false,
   };
   return todo;
 }

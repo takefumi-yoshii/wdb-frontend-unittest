@@ -26,7 +26,7 @@ export function Todos() {
       {todos.length ? (
         <TodoList
           todos={sortTodo(todos, sortOrderBy)}
-          onClickClose={handleClickClose}
+          onClickDelete={handleClickClose}
         />
       ) : (
         <NoItem />

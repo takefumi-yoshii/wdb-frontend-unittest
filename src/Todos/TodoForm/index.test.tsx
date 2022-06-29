@@ -8,26 +8,24 @@ import { TodoForm } from "./";
 describe("TodoForm", () => {
   test("入力し「Add」ボタンを押下すると、入力値を引数に onSubmit が呼ばれること", () => {
     const mockFn = jest.fn();
-    const value = "テスト";
     render(<TodoForm onSubmit={mockFn} />);
     userEvent.type(
       screen.getByRole("textbox"),
-      value
+      "テスト"
     );
     userEvent.click(
       screen.getByRole("button", { name: "Add" })
     );
-    expect(mockFn).toHaveBeenCalledWith(value);
+    expect(mockFn).toHaveBeenCalledWith("テスト");
   });
   test("入力し「Enter」キーを押下すると、入力値を引数に onSubmit が呼ばれること", () => {
     const mockFn = jest.fn();
-    const value = "テスト";
     render(<TodoForm onSubmit={mockFn} />);
     userEvent.type(
       screen.getByRole("textbox"),
-      `${value}{enter}`
+      `テスト{enter}`
     );
-    expect(mockFn).toHaveBeenCalledWith(value);
+    expect(mockFn).toHaveBeenCalledWith("テスト");
   });
   test("何も入力せず「Add」ボタンを押下すると、onSubmit は呼ばれないこと", () => {
     const mockFn = jest.fn();

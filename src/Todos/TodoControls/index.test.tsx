@@ -18,7 +18,7 @@ describe("TodoControls: Todo未登録時", () => {
   });
 });
 
-describe("TodoControls: Todo登録時", () => {
+describe("TodoControls: Todo登録済時", () => {
   test("[sortOrderBy: true] 昇順表示中ステータスを表すこと", () => {
     render(
       <TodoControls
