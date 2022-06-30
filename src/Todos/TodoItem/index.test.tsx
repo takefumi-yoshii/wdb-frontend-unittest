@@ -7,7 +7,8 @@ import { createTodo } from "../functions";
 import { TodoItem } from "./";
 
 describe("TodoItem", () => {
-  test("「x」ボタンを押下すると、id を引数に onClickDelete が呼ばれること", () => {
+  const user = userEvent.setup();
+  test("「x」ボタンを押下すると、id を引数に onClickDelete が呼ばれること", async () => {
     const todo = createTodo("テスト");
     const mockFn = jest.fn();
     render(
@@ -16,7 +17,7 @@ describe("TodoItem", () => {
         onClickDelete={mockFn}
       />
     );
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(mockFn).toHaveBeenCalledWith(todo.id);
   });
 });
